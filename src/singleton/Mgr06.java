@@ -1,7 +1,7 @@
 package singleton;
 
 
-//DCL pattern
+//singleton pattern with DCL feature
 public class Mgr06 {
 	
 	/*	here we add volatile to INSTANCE for the purpose of avoid Order Rearrange 
