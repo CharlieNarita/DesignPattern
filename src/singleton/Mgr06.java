@@ -1,12 +1,19 @@
 package singleton;
 
+
+//DCL pattern
 public class Mgr06 {
+	
+	/*	here we add volatile to INSTANCE for the purpose of avoid Order Rearrange 
+	 *	that cause the reference point to a semi-initial object
+	 */ 
 	private static volatile Mgr06 INSTANCE;	//JIT
 	
 	private Mgr06() {
 		
 	}
 	
+	//this case have two null checks, so its called double check lock -- DCL
 	public static Mgr06 getInstance() {
 		if(INSTANCE == null) {
 			synchronized (Mgr06.class) {
